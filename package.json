@@ -1,0 +1,12 @@
+{
+"name": "json-refresh",
+"version": "1.0.0",
+"description": "Refresh and clean JSON for GitHub Pages",
+"main": "scripts/refresh.js",
+"scripts": {
+"refresh": "node scripts/refresh.js"
+},
+"dependencies": {
+"node-fetch": "^2.6.1"
+}
+}
