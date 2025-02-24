@@ -2025,7 +2025,20 @@
       "type": 1,
       "api": "https://api.apibdzy.com/api.php/provide/vod/?ac=list",
       "searchable": 1,
-      "filterable": 0
+      "filterable": 0,
+      "categories": [
+        "大陆剧",
+        "大陆综艺",
+        "港澳剧",
+        "韩剧",
+        "日剧",
+        "港台综艺",
+        "日韩综艺",
+        "电影",
+        "动漫",
+        "伦理片",
+        "体育赛事"
+      ]
     },
     {
       "key": "js_4KHDR",
@@ -3602,5 +3615,5 @@
       "logo": "https://epg.112114.xyz/logo/{name}.png"
     }
   ],
-  "lastUpdated": "2025-02-24T07:40:03.672Z"
+  "lastUpdated": "2025-02-24T07:56:24.483Z"
 }
