@@ -6,7 +6,7 @@ const fetch = require('node-fetch');
 (async () => {
 try {
 // Replace with your JSON URL
-const url = 'https://example.com/data.json';
+const url = 'https://raw.liucn.cc/box/m.json';
 const response = await fetch(url);
 let content = await response.text();
   // Remove lines that start with '//' (using RegEx multiline flag)
