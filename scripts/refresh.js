@@ -24,7 +24,7 @@ const cleanedJSON = JSON.stringify(jsonData, null, 2);
 
 // Write the cleaned JSON to a file in your repository
 // For example, into the 'docs' folder that is served by GitHub Pages.
-fs.writeFileSync('docs/cleaned.json', cleanedJSON);
+fs.writeFileSync('box/m.json', cleanedJSON);
 
 console.log('Cleaned JSON saved successfully!');
 } catch (error) {
