@@ -1,0 +1,39 @@
+name: Refresh JSON Daily
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每日午夜 UTC 執行
+  workflow_dispatch:
+
+jobs:
+  refresh-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false  # 我們將使用自訂 Token 推送
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run refresh script
+        run: npm run refresh
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/cleaned.json
+          # 若有變更才 commit
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh cleaned JSON [skip ci]"
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
+          else
+            echo "No changes to commit."
+          fi
