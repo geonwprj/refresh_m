@@ -17,22 +17,25 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Run refresh script
+      - name: Run refresh.js script
         run: npm run refresh
+
+      - name: Run refresh_min.js script
+        run: node scripts/refresh_min.js
 
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add box/m.json
+          git add box/m.json box/m_min.json
           # 若有變更才 commit
           if ! git diff --cached --quiet; then
-            git commit -m "Refresh cleaned JSON [skip ci]"
+            git commit -m "Refresh cleaned JSONs [skip ci]"
             git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
           else
             echo "No changes to commit."
