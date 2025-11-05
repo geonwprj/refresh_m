@@ -140,14 +140,6 @@
       ]
     },
     {
-      "key": "百度",
-      "name": "🎏百度┃采集",
-      "type": 1,
-      "api": "https://dark-night-ea5e.fpzw5pvb5j.workers.dev/api.apibdzy.com/api.php/provide/vod/?ac=list",
-      "searchable": 1,
-      "filterable": 0
-    },
-    {
       "key": "MV_vod",
       "name": "🎶明星┃MV",
       "type": 1,
@@ -972,5 +964,5 @@
       "logo": "https://epg.112114.xyz/logo/{name}.png"
     }
   ],
-  "lastUpdated": "2025-11-05T15:16:29.740Z"
+  "lastUpdated": "2025-11-05T15:22:55.914Z"
 }
