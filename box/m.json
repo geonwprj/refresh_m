@@ -2815,7 +2815,7 @@
       "key": "暴风采集-更新",
       "name": "🌪️暴风影音(no-ad)",
       "type": 1,
-      "api": "https://app07.geow.uk/app.bfzyapi.com/api.php/provide/vod/",
+      "api": "https://dark-night-ea5e.fpzw5pvb5j.workers.dev/app.bfzyapi.com/api.php/provide/vod/",
       "playUrl": "",
       "categories": [
         "国产剧",
@@ -3641,5 +3641,5 @@
       "logo": "https://epg.112114.xyz/logo/{name}.png"
     }
   ],
-  "lastUpdated": "2025-11-05T11:53:57.433Z"
+  "lastUpdated": "2025-11-05T14:55:17.582Z"
 }
