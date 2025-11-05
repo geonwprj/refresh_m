@@ -35,13 +35,20 @@ const fetch = require('node-fetch');
       // Process each modification item
       if (Array.isArray(jsonData.sites)) {
         modifyDataArray.forEach(modifyItem => {
-          if (modifyItem.key) {
-            jsonData.sites = jsonData.sites.map(site => {
-              // Merge changes when key matches
-              return site.key === modifyItem.key 
-                ? { ...site, ...modifyItem } 
-                : site;
-            });
+          const siteIndex = jsonData.sites.findIndex(site => site.key === modifyItem.key);
+          if (siteIndex !== -1) {
+            if (modifyItem.new_key) {
+              const newSite = JSON.parse(JSON.stringify(jsonData.sites[siteIndex]));
+              newSite.key = modifyItem.new_key;
+              newSite.name = modifyItem.name || modifyItem.new_key;
+              if (modifyItem.api) {
+                newSite.api = modifyItem.api;
+              }
+              delete newSite.new_key;
+              jsonData.sites.push(newSite);
+            } else {
+              jsonData.sites[siteIndex] = { ...jsonData.sites[siteIndex], ...modifyItem };
+            }
           }
         });
       }
