@@ -77,6 +77,39 @@
       ]
     },
     {
+      "key": "虎牙",
+      "name": "🐯虎牙采集",
+      "type": 1,
+      "api": "https://dark-night-ea5e.fpzw5pvb5j.workers.dev/www.huyaapi.com/api.php/provide/vod/from/hym3u8",
+      "searchable": 1,
+      "quickSearch": 1,
+      "categories": [
+        "内地剧",
+        "动作片",
+        "科幻片",
+        "战争片",
+        "喜剧片",
+        "爱情片",
+        "恐怖片",
+        "犯罪片",
+        "剧情片",
+        "冒险片",
+        "记录片",
+        "韩剧",
+        "香港剧",
+        "台湾剧",
+        "欧美剧",
+        "日剧",
+        "马泰剧",
+        "体育赛事",
+        "综艺",
+        "动画片",
+        "中国动漫",
+        "日本动漫",
+        "欧美动漫"
+      ]
+    },
+    {
       "key": "暴风采集",
       "name": "🌪️暴风影音",
       "type": 1,
@@ -105,27 +138,6 @@
         "新马泰综艺",
         "纪录片"
       ]
-    },
-    {
-      "key": "MV_vod",
-      "name": "🎶明星┃MV",
-      "type": 1,
-      "api": "https://dark-night-ea5e.fpzw5pvb5j.workers.dev/mv.wogg.link/mv/vod",
-      "style": {
-        "type": "oval"
-      },
-      "searchable": 1,
-      "quickSearch": 0,
-      "changeable": 0
-    },
-    {
-      "key": "MV_vod",
-      "name": "🎹┃MTV┃合集",
-      "type": 1,
-      "api": "https://dark-night-ea5e.fpzw5pvb5j.workers.dev/mv.wogg.link/mv/vod",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1
     }
   ],
   "parses": [
@@ -931,5 +943,5 @@
       "logo": "https://epg.112114.xyz/logo/{name}.png"
     }
   ],
-  "lastUpdated": "2025-12-31T01:05:32.594Z"
+  "lastUpdated": "2026-01-01T01:11:38.049Z"
 }
