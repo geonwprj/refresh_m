@@ -113,7 +113,7 @@
       "key": "local",
       "name": "🐉┃LOCAL",
       "type": 1,
-      "api": "http://app05:8000/api.php/provide/vod",
+      "api": "http://vod_hub.geonw.local/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
