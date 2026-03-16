@@ -1,86 +1,88 @@
-// scripts/refresh_xptv.js
+#!/usr/bin/env node
+
 const fs = require('fs');
 const path = require('path');
+const fetch = require('node-fetch');
 
-const INPUT_PATH = path.join(__dirname, '..', 'box', 'xptv_raw.json'); // 這是新格式來源檔，自己改路徑
-const OUTPUT_PATH = path.join(__dirname, '..', 'box', 'all.json');     // 輸出檔
+(async () => {
+  try {
+    const url = 'https://raw.githubusercontent.com/fangkuia/XPTV/main/all.json';
+    const response = await fetch(url);
+    let content = await response.text();
 
-function slugifyName(name) {
-  // 1. 全轉小寫
-  let s = name.toLowerCase();
+    // Remove comment lines
+    content = content
+      .split('\n')
+      .filter(line => !line.trim().startsWith('//'))
+      .join('\n');
 
-  // 2. 把非字母數字的字元都轉成底線
-  s = s.replace(/[^a-z0-9]+/g, '_');
+    let rawData = JSON.parse(content);
+    
+    // Define your standard template headers
+    let jsonData = {
+      "spider": "./fty.jar;md5;3d161697458ecbcd2651a749db761ba1",
+      "wallpaper": "https://深色壁纸.xxooo.cf/",
+      "warningText": "资源来自网络，所有内容仅供学习使用，请勿用于违法及商业用途，请勿付费购买。",
+      "sites": []
+    };
 
-  // 3. 去除前後底線
-  s = s.replace(/^_+|_+$/g, '');
+    if (Array.isArray(rawData.sites)) {
+      jsonData.sites = rawData.sites.map(site => {
+        // 1. Generate a clean key to avoid duplicates and special chars
+        // Uses the hostname from the API URL (e.g., '360zy.com' -> '360zycom')
+        let generatedKey = '';
+        try {
+          const urlObj = new URL(site.api);
+          generatedKey = urlObj.hostname.replace(/[^a-zA-Z0-2026]/g, '');
+        } catch (e) {
+          // Fallback if API is not a valid URL
+          generatedKey = site.name.replace(/[^a-zA-Z0-2026]/g, '');
+        }
 
-  // 4. 保底，如果整個被清空，就給一個通用 key
-  if (!s) s = 'site';
-
-  return s;
-}
-
-function shortHash(str) {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    hash = (hash * 31 + str.charCodeAt(i)) | 0;
-  }
-  // 轉成正數 + 36 進位，縮短一點
-  return Math.abs(hash).toString(36);
-}
-
-function generateKeys(sites) {
-  const used = new Set();
-
-  return sites.map((site, index) => {
-    const base = slugifyName(site.name || `site_${index}`);
-    let key = base;
-    let attempt = 1;
-
-    // 防重複，如果已存在就加短 hash 或遞增 suffix
-    while (used.has(key)) {
-      key = `${base}_${shortHash(base + '_' + attempt)}`;
-      attempt++;
+        // 2. Return aligned object with your defaults
+        return {
+          "key": site.key || generatedKey,
+          "name": site.name,
+          "type": site.type || 1,
+          "api": site.api,
+          "searchable": 1,
+          "quickSearch": 1,
+          "filterable": 1
+        };
+      });
     }
 
-    used.add(key);
-    return {
-      key,
-      ...site,
-    };
-  });
-}
+    // 3. Handle local modifications (same logic as your original script)
+    const modifyFilePath = 'box/all_modify.json';
+    if (fs.existsSync(modifyFilePath)) {
+      const modifyContent = fs.readFileSync(modifyFilePath, 'utf-8');
+      const modifyDataArray = Array.isArray(JSON.parse(modifyContent)) 
+        ? JSON.parse(modifyContent) 
+        : [JSON.parse(modifyContent)];
 
-function main() {
-  // 讀新格式檔案
-  const raw = fs.readFileSync(INPUT_PATH, 'utf8');
-  const json = JSON.parse(raw);
+      modifyDataArray.forEach(modifyItem => {
+        const siteIndex = jsonData.sites.findIndex(site => site.key === modifyItem.key);
+        if (siteIndex !== -1) {
+          if (modifyItem.new_key) {
+            const newSite = { ...jsonData.sites[siteIndex], ...modifyItem };
+            newSite.key = modifyItem.new_key;
+            delete newSite.new_key;
+            jsonData.sites.push(newSite);
+          } else {
+            jsonData.sites[siteIndex] = { ...jsonData.sites[siteIndex], ...modifyItem };
+          }
+        }
+      });
+    }
 
-  const rawSites = Array.isArray(json.sites) ? json.sites : [];
+    // 4. Save the formatted JSON
+    const outputPath = 'box/all.json';
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+    fs.writeFileSync(outputPath, JSON.stringify(jsonData, null, 2));
 
-  // 補預設欄位
-  const withDefaults = rawSites.map((s) => ({
-    // 原本就有的欄位優先
-    name: s.name,
-    type: s.type ?? 1,
-    api: s.api,
-
-    // 預設值
-    searchable: s.searchable ?? 1,
-    quickSearch: s.quickSearch ?? 1,
-    filterable: s.filterable ?? 1,
-  }));
-
-  // 產生不重複、無特殊字元的 key
-  const finalSites = generateKeys(withDefaults);
-
-  const outputJson = {
-    sites: finalSites,
-  };
-
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(outputJson, null, 2), 'utf8');
-  console.log(`Successfully synced and saved to ${OUTPUT_PATH}`);
-}
-
-main();
+    console.log(`Success! Aligned ${jsonData.sites.length} sites to ${outputPath}`);
+  } catch (error) {
+    console.error('Error:', error);
+    process.exit(1);
+  }
+})();
