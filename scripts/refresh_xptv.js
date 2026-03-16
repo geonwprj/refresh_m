@@ -10,7 +10,6 @@ const fetch = require('node-fetch');
     const response = await fetch(url);
     let content = await response.text();
 
-    // Remove comment lines
     content = content
       .split('\n')
       .filter(line => !line.trim().startsWith('//'))
@@ -18,7 +17,6 @@ const fetch = require('node-fetch');
 
     let rawData = JSON.parse(content);
     
-    // Define your standard template headers
     let jsonData = {
       "spider": "./fty.jar;md5;3d161697458ecbcd2651a749db761ba1",
       "wallpaper": "https://深色壁纸.xxooo.cf/",
@@ -28,31 +26,44 @@ const fetch = require('node-fetch');
 
     if (Array.isArray(rawData.sites)) {
       jsonData.sites = rawData.sites.map(site => {
-        // 1. Generate a clean key to avoid duplicates and special chars
-        // Uses the hostname from the API URL (e.g., '360zy.com' -> '360zycom')
-        let generatedKey = '';
-        try {
-          const urlObj = new URL(site.api);
-          generatedKey = urlObj.hostname.replace(/[^a-zA-Z0-2026]/g, '');
-        } catch (e) {
-          // Fallback if API is not a valid URL
-          generatedKey = site.name.replace(/[^a-zA-Z0-2026]/g, '');
+        // 1. Generate/Clean Key (Supports Chinese, Alphanumeric, underscores)
+        let generatedKey = site.key || "";
+        if (!generatedKey) {
+          if (site.api.startsWith('http')) {
+            try {
+              generatedKey = new URL(site.api).hostname;
+            } catch (e) {
+              generatedKey = site.name;
+            }
+          } else {
+            generatedKey = site.api;
+          }
         }
+        // Clean key: allow Chinese, English, Numbers. Remove dots, slashes, special emoji/symbols.
+        generatedKey = generatedKey.replace(/[^\u4e00-\u9fa5a-zA-Z0-9_]/g, '');
 
-        // 2. Return aligned object with your defaults
-        return {
-          "key": site.key || generatedKey,
+        // 2. Build aligned object
+        const alignedSite = {
+          "key": generatedKey,
           "name": site.name,
           "type": site.type || 1,
           "api": site.api,
-          "searchable": 1,
-          "quickSearch": 1,
-          "filterable": 1
+          // Use source value if exists, otherwise default to 1
+          "searchable": site.hasOwnProperty('searchable') ? site.searchable : 1,
+          "quickSearch": site.hasOwnProperty('quickSearch') ? site.quickSearch : 1,
+          "filterable": site.hasOwnProperty('filterable') ? site.filterable : 1
         };
+
+        // 3. Add optional fields if they exist in the source
+        if (site.ext) alignedSite.ext = site.ext;
+        if (site.jar) alignedSite.jar = site.jar;
+        if (site.changeable !== undefined) alignedSite.changeable = site.changeable;
+
+        return alignedSite;
       });
     }
 
-    // 3. Handle local modifications (same logic as your original script)
+    // 4. Handle local modifications
     const modifyFilePath = 'box/all_modify.json';
     if (fs.existsSync(modifyFilePath)) {
       const modifyContent = fs.readFileSync(modifyFilePath, 'utf-8');
@@ -75,12 +86,11 @@ const fetch = require('node-fetch');
       });
     }
 
-    // 4. Save the formatted JSON
     const outputPath = 'box/all.json';
     fs.mkdirSync(path.dirname(outputPath), { recursive: true });
     fs.writeFileSync(outputPath, JSON.stringify(jsonData, null, 2));
 
-    console.log(`Success! Aligned ${jsonData.sites.length} sites to ${outputPath}`);
+    console.log(`Success! Aligned ${jsonData.sites.length} sites including specialized items.`);
   } catch (error) {
     console.error('Error:', error);
     process.exit(1);
