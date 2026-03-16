@@ -4,7 +4,7 @@
   "warningText": "资源来自网络，所有内容仅供学习使用，请勿用于违法及商业用途，请勿付费购买。",
   "sites": [
     {
-      "key": "60zycom",
+      "key": "360zycom",
       "name": "360|点播",
       "type": 1,
       "api": "https://360zy.com/api.php/provide/vod/",
@@ -49,7 +49,7 @@
       "filterable": 1
     },
     {
-      "key": "hwlive",
+      "key": "hw8live",
       "name": "华为吧|点播",
       "type": 1,
       "api": "https://hw8.live/api.php/provide/vod/",
@@ -58,7 +58,7 @@
       "filterable": 1
     },
     {
-      "key": "wwwfuju202cc",
+      "key": "wwwfuju2024cc",
       "name": "腐剧|点播",
       "type": 1,
       "api": "http://www.fuju2024.cc:8013/ruifenglb_api.php/provide/vod/",
@@ -76,7 +76,7 @@
       "filterable": 1
     },
     {
-      "key": "okzywcom",
+      "key": "okzyw9com",
       "name": "OK|点播",
       "type": 1,
       "api": "https://okzyw9.com/api.php/provide/vod/",
@@ -229,7 +229,7 @@
       "filterable": 1
     },
     {
-      "key": "muapiyhzycom",
+      "key": "m3u8apiyhzycom",
       "name": "樱花|点播",
       "type": 1,
       "api": "https://m3u8.apiyhzy.com/api.php/provide/vod/",
@@ -319,463 +319,514 @@
       "filterable": 1
     },
     {
-      "key": "",
+      "key": "csp_czzy",
       "name": "厂长资源",
       "type": 3,
       "api": "csp_czzy",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/refs/heads/main/js/czzy.js"
     },
     {
-      "key": "fmovies",
+      "key": "csp_fmovies",
       "name": "fmovies",
       "type": 3,
       "api": "csp_fmovies",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/refs/heads/main/js/fmovies.js"
     },
     {
-      "key": "",
+      "key": "csp_bde4",
       "name": "哔滴影视",
       "type": 3,
       "api": "csp_bde4",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/bdys.js"
     },
     {
-      "key": "",
+      "key": "csp_Olevod",
       "name": "欧乐🪜",
       "type": 3,
       "api": "csp_Olevod",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/ole.js"
     },
     {
-      "key": "",
+      "key": "csp_Zxzj",
       "name": "在线之家",
       "type": 3,
       "api": "csp_Zxzj",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/zxzj.js"
     },
     {
-      "key": "LIBVIO",
+      "key": "csp_libvio",
       "name": "LIBVIO",
       "type": 3,
       "api": "csp_libvio",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/libvio.js"
     },
     {
-      "key": "",
+      "key": "csp_ai",
       "name": "ギリギリ动漫",
       "type": 3,
       "api": "csp_ai",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/ai.js"
     },
     {
-      "key": "",
+      "key": "csp_duboku",
       "name": "独播库",
       "type": 3,
       "api": "csp_duboku",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/duboku.js"
     },
     {
-      "key": "AGE",
+      "key": "csp_age",
       "name": "AGE动漫",
       "type": 3,
       "api": "csp_age",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://gist.githubusercontent.com/occupy-pluto/e3a7bb98d5027d0f6dfa85fc2ac11a78/raw/6deb0475d295ac867ccb9c7cf3b1fb212a77abd7/agedm.js"
     },
     {
-      "key": "kav",
+      "key": "csp_4kav",
       "name": "4k-av",
       "type": 3,
       "api": "csp_4kav",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/4kav.js"
     },
     {
-      "key": "",
+      "key": "csp_hjkk",
       "name": "韓劇看看",
       "type": 3,
       "api": "csp_hjkk",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/hjkk.js"
     },
     {
-      "key": "",
+      "key": "csp_jpyy",
       "name": "金牌影院",
       "type": 3,
       "api": "csp_jpyy",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/jpyy.js"
     },
     {
-      "key": "",
+      "key": "csp_saohuo",
       "name": "燒火電影",
       "type": 3,
       "api": "csp_saohuo",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/saohuo.js"
     },
     {
-      "key": "NO",
+      "key": "csp_novipnoad",
       "name": "NO視頻",
       "type": 3,
       "api": "csp_novipnoad",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/novipnoad.js"
     },
     {
-      "key": "",
+      "key": "csp_xingya",
       "name": "星芽短劇",
       "type": 3,
       "api": "csp_xingya",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/xingya.js"
     },
     {
-      "key": "",
+      "key": "csp_guazi",
       "name": "瓜子",
       "type": 3,
       "api": "csp_guazi",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/gzys.js"
     },
     {
-      "key": "",
+      "key": "csp_iyftv",
       "name": "愛壹帆",
       "type": 3,
       "api": "csp_iyftv",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/iyftv.js"
     },
     {
-      "key": "",
+      "key": "csp_ystt",
       "name": "影视天堂",
       "type": 3,
       "api": "csp_ystt",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/ystt.js"
     },
     {
-      "key": "",
+      "key": "csp_apple",
       "name": "小蘋果",
       "type": 3,
       "api": "csp_apple",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/apple.js"
     },
     {
-      "key": "",
+      "key": "csp_aowu",
       "name": "嗷嗚動漫",
       "type": 3,
       "api": "csp_aowu",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/aowu.js"
     },
     {
-      "key": "",
+      "key": "csp_xiaohys",
       "name": "小紅影視",
       "type": 3,
       "api": "csp_xiaohys",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/xiaohys.js"
     },
     {
-      "key": "",
+      "key": "csp_jianpian",
       "name": "荐片",
       "type": 3,
       "api": "csp_jianpian",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/refs/heads/main/js/jianpian.js"
     },
     {
-      "key": "",
+      "key": "csp_rrmj",
       "name": "人人",
       "type": 3,
       "api": "csp_rrmj",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/refs/heads/main/js/rrmj.js"
     },
     {
-      "key": "anime1",
+      "key": "csp_anime1",
       "name": "anime1",
       "type": 3,
       "api": "csp_anime1",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/refs/heads/main/js/anime1.js"
     },
     {
-      "key": "",
+      "key": "csp_wwgz",
       "name": "农民影视",
       "type": 3,
       "api": "csp_wwgz",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/refs/heads/main/js/wwgz.js"
     },
     {
-      "key": "",
+      "key": "csp_7sefun",
       "name": "七色番動漫",
       "type": 3,
       "api": "csp_7sefun",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/refs/heads/main/js/7sefun.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_wogg",
       "name": "玩偶哥哥 | PAN",
       "type": 3,
       "api": "csp_wogg",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/wogg.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_nanfdj",
       "name": "南風短劇 | PAN",
       "type": 3,
       "api": "csp_nanfdj",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/nanfdj.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_yydsys",
       "name": "多多影音 | PAN",
       "type": 3,
       "api": "csp_yydsys",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/yydsys.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_labi",
       "name": "蜡笔盘 | PAN",
       "type": 3,
       "api": "csp_labi",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/labipan.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_muou",
       "name": "木偶 | PAN",
       "type": 3,
       "api": "csp_muou",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/muou.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_mihdr",
       "name": "小米 | PAN",
       "type": 3,
       "api": "csp_mihdr",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/mihdr.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_yunpanres",
       "name": "云盘资源网 | PAN",
       "type": 3,
       "api": "csp_yunpanres",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/yunpanres.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_xzys",
       "name": "校长影视 | PAN",
       "type": 3,
       "api": "csp_xzys",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/xzys.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_leijing",
       "name": "雷鲸 | PAN",
       "type": 3,
       "api": "csp_leijing",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/leijing.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_ouge",
       "name": "欧哥 | PAN",
       "type": 3,
       "api": "csp_ouge",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/ouge.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_yunpan8",
       "name": "云盘吧 | PAN",
       "type": 3,
       "api": "csp_yunpan8",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/yunpan8.js"
     },
     {
-      "key": "UCPAN",
+      "key": "csp_jsmucpan",
       "name": "小米UC | PAN(昊)",
       "type": 3,
       "api": "csp_js/mucpan",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/kingreevice/my_xptv/refs/heads/main/js/mucpan.js"
     },
     {
-      "key": "UCPAN",
+      "key": "csp_shandian",
       "name": "闪电UC | PAN",
       "type": 3,
       "api": "csp_shandian",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/shandian.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_aomi",
       "name": "奥秘 | PAN",
       "type": 3,
       "api": "csp_aomi",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/aomi.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_luiqu",
       "name": "六趣 | PAN",
       "type": 3,
       "api": "csp_luiqu",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/liuqu.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_baipiao",
       "name": "白嫖 | PAN",
       "type": 3,
       "api": "csp_baipiao",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/baipiao.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_huban",
       "name": "虎斑 | PAN",
       "type": 3,
       "api": "csp_huban",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/huban.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_xiafan",
       "name": "下饭 | PAN",
       "type": 3,
       "api": "csp_xiafan",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/xiafan.js"
     },
     {
-      "key": "SeedHubPAN",
+      "key": "csp_seedhub",
       "name": "SeedHub | PAN",
       "type": 3,
       "api": "csp_seedhub",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/seedhub.js"
     },
     {
-      "key": "Star2PAN",
+      "key": "csp_star2",
       "name": "Star2 | PAN",
       "type": 3,
       "api": "csp_star2",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/star2.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_guanying",
       "name": "观影 | PAN",
       "type": 3,
       "api": "csp_guanying",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/kingreevice/my_xptv/refs/heads/main/js/GYING_2025_2.js"
     },
     {
-      "key": "TGPAN",
+      "key": "csp_tgs",
       "name": "TG搜 | PAN",
       "type": 3,
       "api": "csp_tgs",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/tgs.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_tianyiso",
       "name": "天逸搜 | PAN搜索",
       "type": 3,
       "api": "csp_tianyiso",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://gist.githubusercontent.com/occupy-pluto/874d9b180bcaff91e2dac06d38ed8474/raw/tianyiso.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_jsyunchao",
       "name": "云巢 | PAN",
       "type": 3,
       "api": "csp_js/yunchao",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/kingreevice/my_xptv/refs/heads/main/js/yunchao.js"
     },
     {
-      "key": "PAN",
+      "key": "csp_xpanpan",
       "name": "小盘盘 | PAN",
       "type": 3,
       "api": "csp_xpanpan",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 1,
+      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/xpanpan.js"
     }
   ]
 }
