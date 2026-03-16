@@ -35,7 +35,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add box/m.json box/m_min.json
+          git add box/m.json box/m_min.json box/all.json
           # 若有變更才 commit
           if ! git diff --cached --quiet; then
             git commit -m "Refresh cleaned JSONs [skip ci]"
