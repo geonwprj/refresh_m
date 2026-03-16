@@ -28,6 +28,9 @@ jobs:
       - name: Run refresh_min.js script
         run: node scripts/refresh_min.js
 
+      - name: Run refresh_xptv.js script
+        run: node scripts/refresh_xptv.js
+        
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
