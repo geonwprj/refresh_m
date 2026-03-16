@@ -1,75 +1,86 @@
-#!/usr/bin/env node
-
+// scripts/refresh_xptv.js
 const fs = require('fs');
 const path = require('path');
-const fetch = require('node-fetch');
 
-(async () => {
-  try {
-    // 1. Get the new remote JSON source
-    const url = 'https://raw.githubusercontent.com/fangkuia/XPTV/main/all.json';
-    const response = await fetch(url);
-    let content = await response.text();
+const INPUT_PATH = path.join(__dirname, '..', 'box', 'xptv_raw.json'); // 這是新格式來源檔，自己改路徑
+const OUTPUT_PATH = path.join(__dirname, '..', 'box', 'all.json');     // 輸出檔
 
-    // 2. Remove comment lines (Standard safety for these types of config files)
-    content = content
-      .split('\n')
-      .filter(line => !line.trim().startsWith('//'))
-      .join('\n');
+function slugifyName(name) {
+  // 1. 全轉小寫
+  let s = name.toLowerCase();
 
-    // 3. Parse JSON and update timestamp
-    let jsonData = JSON.parse(content);
-    
-    // Ensure the structure has a 'lastUpdated' field for your format
-    jsonData.lastUpdated = new Date().toISOString();
+  // 2. 把非字母數字的字元都轉成底線
+  s = s.replace(/[^a-z0-9]+/g, '_');
 
-    // 4. Handle local modifications (Using a specific modify file for this source)
-    // You can point this to 'box/m_modify.json' if you want to reuse the same rules,
-    // or create 'box/all_modify.json' for source-specific overrides.
-    const modifyFilePath = 'box/all_modify.json'; 
-    
-    if (fs.existsSync(modifyFilePath)) {
-      const modifyContent = fs.readFileSync(modifyFilePath, 'utf-8');
-      const rawModifyData = JSON.parse(modifyContent);
-      
-      const modifyDataArray = Array.isArray(rawModifyData) 
-        ? rawModifyData 
-        : [rawModifyData];
+  // 3. 去除前後底線
+  s = s.replace(/^_+|_+$/g, '');
 
-      // Process each modification item
-      if (Array.isArray(jsonData.sites)) {
-        modifyDataArray.forEach(modifyItem => {
-          const siteIndex = jsonData.sites.findIndex(site => site.key === modifyItem.key);
-          if (siteIndex !== -1) {
-            if (modifyItem.new_key) {
-              // Logic to clone and create a new entry with a different key
-              const newSite = JSON.parse(JSON.stringify(jsonData.sites[siteIndex]));
-              newSite.key = modifyItem.new_key;
-              newSite.name = modifyItem.name || modifyItem.new_key;
-              if (modifyItem.api) {
-                newSite.api = modifyItem.api;
-              }
-              delete newSite.new_key;
-              jsonData.sites.push(newSite);
-            } else {
-              // Standard merge/update logic
-              jsonData.sites[siteIndex] = { ...jsonData.sites[siteIndex], ...modifyItem };
-            }
-          }
-        });
-      }
+  // 4. 保底，如果整個被清空，就給一個通用 key
+  if (!s) s = 'site';
+
+  return s;
+}
+
+function shortHash(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = (hash * 31 + str.charCodeAt(i)) | 0;
+  }
+  // 轉成正數 + 36 進位，縮短一點
+  return Math.abs(hash).toString(36);
+}
+
+function generateKeys(sites) {
+  const used = new Set();
+
+  return sites.map((site, index) => {
+    const base = slugifyName(site.name || `site_${index}`);
+    let key = base;
+    let attempt = 1;
+
+    // 防重複，如果已存在就加短 hash 或遞增 suffix
+    while (used.has(key)) {
+      key = `${base}_${shortHash(base + '_' + attempt)}`;
+      attempt++;
     }
 
-    // 5. Save updated JSON to the new path
-    const cleanedJSON = JSON.stringify(jsonData, null, 2);
-    const outputPath = 'box/all.json';
-    
-    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-    fs.writeFileSync(outputPath, cleanedJSON);
+    used.add(key);
+    return {
+      key,
+      ...site,
+    };
+  });
+}
 
-    console.log(`Successfully synced and saved to ${outputPath}`);
-  } catch (error) {
-    console.error('Error processing all.json:', error);
-    process.exit(1);
-  }
-})();
+function main() {
+  // 讀新格式檔案
+  const raw = fs.readFileSync(INPUT_PATH, 'utf8');
+  const json = JSON.parse(raw);
+
+  const rawSites = Array.isArray(json.sites) ? json.sites : [];
+
+  // 補預設欄位
+  const withDefaults = rawSites.map((s) => ({
+    // 原本就有的欄位優先
+    name: s.name,
+    type: s.type ?? 1,
+    api: s.api,
+
+    // 預設值
+    searchable: s.searchable ?? 1,
+    quickSearch: s.quickSearch ?? 1,
+    filterable: s.filterable ?? 1,
+  }));
+
+  // 產生不重複、無特殊字元的 key
+  const finalSites = generateKeys(withDefaults);
+
+  const outputJson = {
+    sites: finalSites,
+  };
+
+  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(outputJson, null, 2), 'utf8');
+  console.log(`Successfully synced and saved to ${OUTPUT_PATH}`);
+}
+
+main();
