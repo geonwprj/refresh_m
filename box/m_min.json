@@ -75,39 +75,6 @@
         "日韩综艺",
         "欧美综艺"
       ]
-    },
-    {
-      "key": "虎牙",
-      "name": "🐯虎牙采集",
-      "type": 1,
-      "api": "https://dark-night-ea5e.fpzw5pvb5j.workers.dev/www.huyaapi.com/api.php/provide/vod/from/hym3u8",
-      "searchable": 1,
-      "quickSearch": 1,
-      "categories": [
-        "内地剧",
-        "动作片",
-        "科幻片",
-        "战争片",
-        "喜剧片",
-        "爱情片",
-        "恐怖片",
-        "犯罪片",
-        "剧情片",
-        "冒险片",
-        "记录片",
-        "韩剧",
-        "香港剧",
-        "台湾剧",
-        "欧美剧",
-        "日剧",
-        "马泰剧",
-        "体育赛事",
-        "综艺",
-        "动画片",
-        "中国动漫",
-        "日本动漫",
-        "欧美动漫"
-      ]
     }
   ],
   "parses": [
@@ -913,5 +880,5 @@
       "logo": "https://epg.112114.xyz/logo/{name}.png"
     }
   ],
-  "lastUpdated": "2026-05-06T02:02:20.948Z"
+  "lastUpdated": "2026-05-07T02:04:53.163Z"
 }
