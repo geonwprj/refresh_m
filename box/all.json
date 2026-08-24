@@ -349,26 +349,6 @@
       "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/zxzj.js"
     },
     {
-      "key": "csp_libvio",
-      "name": "LIBVIO",
-      "type": 3,
-      "api": "csp_libvio",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/libvio.js"
-    },
-    {
-      "key": "csp_ai",
-      "name": "ギリギリ动漫",
-      "type": 3,
-      "api": "csp_ai",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/ai.js"
-    },
-    {
       "key": "csp_duboku",
       "name": "独播库",
       "type": 3,
@@ -397,16 +377,6 @@
       "quickSearch": 1,
       "filterable": 1,
       "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/4kav.js"
-    },
-    {
-      "key": "csp_hjkk",
-      "name": "韓劇看看",
-      "type": 3,
-      "api": "csp_hjkk",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/hjkk.js"
     },
     {
       "key": "csp_jpyy",
@@ -479,16 +449,6 @@
       "ext": "https://raw.githubusercontent.com/fangkuia/XPTV/refs/heads/main/js/ystt.js"
     },
     {
-      "key": "csp_aowu",
-      "name": "嗷嗚動漫",
-      "type": 3,
-      "api": "csp_aowu",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/main/js/aowu.js"
-    },
-    {
       "key": "csp_jianpian",
       "name": "荐片",
       "type": 3,
@@ -499,16 +459,6 @@
       "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/refs/heads/main/js/jianpian.js"
     },
     {
-      "key": "csp_rrmj",
-      "name": "人人",
-      "type": 3,
-      "api": "csp_rrmj",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/refs/heads/main/js/rrmj.js"
-    },
-    {
       "key": "csp_anime1",
       "name": "anime1",
       "type": 3,
@@ -517,16 +467,6 @@
       "quickSearch": 1,
       "filterable": 1,
       "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/refs/heads/main/js/anime1.js"
-    },
-    {
-      "key": "csp_wwgz",
-      "name": "农民影视",
-      "type": 3,
-      "api": "csp_wwgz",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "https://raw.githubusercontent.com/Yswag/xptv-extensions/refs/heads/main/js/wwgz.js"
     },
     {
       "key": "csp_7sefun",
