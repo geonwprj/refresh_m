@@ -77,42 +77,29 @@
       ]
     },
     {
-      "key": "feisu",
-      "name": "🛰️飞速┃采集",
+      "key": "量子资源",
+      "name": "🥑┃量子┃资源",
       "type": 1,
-      "api": "https://dark-night-ea5e.fpzw5pvb5j.workers.dev/www.feisuzyapi.com/api.php/provide/vod/?ac=list",
+      "api": "https://dark-night-ea5e.fpzw5pvb5j.workers.dev/lzizy1.com/api.php/provide/vod/",
+      "playurl": "json:http://jx.84jia.com/m3u8ts.php?url=",
       "searchable": 1,
+      "quickSearch": 1,
       "filterable": 0,
       "categories": [
-        "国产动漫",
-        "日本动漫",
-        "欧美动漫",
-        "海外动漫",
-        "大陆综艺",
-        "港台综艺",
-        "日韩综艺",
-        "欧美综艺",
-        "动作片",
-        "喜剧片",
-        "爱情片",
-        "科幻片",
-        "恐怖片",
-        "剧情片",
-        "战争片",
         "国产剧",
+        "国产动漫",
+        "泰国剧",
+        "台湾剧",
         "香港剧",
         "欧美剧",
         "韩国剧",
-        "台湾剧",
         "日本剧",
-        "泰国剧",
-        "纪录片",
-        "动画片",
-        "电影解说",
-        "其他片",
-        "其他剧",
-        "体育赛事",
-        "短剧"
+        "动漫",
+        "体育",
+        "剧情片",
+        "动作片",
+        "爱情片",
+        "喜剧片"
       ]
     },
     {
@@ -986,5 +973,5 @@
       "logo": "https://epg.112114.xyz/logo/{name}.png"
     }
   ],
-  "lastUpdated": "2026-10-26T02:27:26.372Z"
+  "lastUpdated": "2026-10-27T03:02:30.472Z"
 }
